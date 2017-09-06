@@ -155,7 +155,7 @@ SELECT neighbor FROM Borders WHERE name='Germany';
 SELECT name FROM Countries WHERE population > 35000000;
 
 /* 
- selects countries with population of 10 million 
+ selects countries with population of 35 million 
  and borders germany
 */
 SELECT Countries.name FROM Countries 
