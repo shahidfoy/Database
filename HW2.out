@@ -1,0 +1,25 @@
+4c.    neighbor    
+----------------
+ Netherlands
+ Belgium
+ Luxemburg
+ Poland
+ Czech Republic
+ Austria
+ France
+ Switzerland
+(8 rows)
+
+4d.  name   
+---------
+ Germany
+ Poland
+ France
+(3 rows)
+
+4e.  name  
+--------
+ Poland
+ France
+(2 rows)
+
