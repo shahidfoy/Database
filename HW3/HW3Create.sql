@@ -1,3 +1,9 @@
+/*
+Mohammad Shahid Foy
+Homework3
+CS 3810
+Mrs. Cohen
+*/
 /* T - 100 Segment US Carrier */
 CREATE TABLE Destination (
 	destination_airport_id INT NOT NULL,
