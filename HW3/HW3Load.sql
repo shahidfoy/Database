@@ -1,37 +1,62 @@
-/* 
-Mohammad Shahid Foy
-Homework3
-CS 3810
-Mrs. Cohen
-*/
-   
 /* T - 100 Segment US Carrier */
-/* Destination */
+/* Airport Destination */
 CREATE TEMP TABLE tmp_table 
 AS
 SELECT * 
-FROM Destination;
+FROM Airport;
 
 COPY tmp_table
 FROM 'C:\DatabaseHW\Destination.csv' DELIMITER ',' CSV HEADER;
 
-INSERT INTO Destination
+INSERT INTO Airport
 SELECT *
 FROM tmp_table
 ON CONFLICT DO NOTHING;
 
 DROP TABLE tmp_table;
 
-/* Origin */
+/* Airport Origin */
 CREATE TEMP TABLE tmp_table 
 AS
 SELECT * 
-FROM Origin;
+FROM Airport;
 
 COPY tmp_table
 FROM 'C:\DatabaseHW\Origin.csv' DELIMITER ',' CSV HEADER;
 
-INSERT INTO Origin
+INSERT INTO Airport
+SELECT *
+FROM tmp_table
+ON CONFLICT DO NOTHING;
+
+DROP TABLE tmp_table;
+
+/* StateInfo */
+CREATE TEMP TABLE tmp_table 
+AS
+SELECT * 
+FROM StateInfo;
+
+COPY tmp_table
+FROM 'C:\DatabaseHW\StateInfo.csv' DELIMITER ',' CSV HEADER;
+
+INSERT INTO StateInfo
+SELECT *
+FROM tmp_table
+ON CONFLICT DO NOTHING;
+
+DROP TABLE tmp_table;
+
+/* TravelInfo */
+CREATE TEMP TABLE tmp_table 
+AS
+SELECT * 
+FROM TravelInfo;
+
+COPY tmp_table
+FROM 'C:\DatabaseHW\TravelInfo.csv' DELIMITER ',' CSV HEADER;
+
+INSERT INTO TravelInfo
 SELECT *
 FROM tmp_table
 ON CONFLICT DO NOTHING;
@@ -48,6 +73,22 @@ COPY tmp_table
 FROM 'C:\DatabaseHW\Carrier.csv' DELIMITER ',' CSV HEADER;
 
 INSERT INTO Carrier
+SELECT *
+FROM tmp_table
+ON CONFLICT DO NOTHING;
+
+DROP TABLE tmp_table;
+
+/* CarrierGroup */
+CREATE TEMP TABLE tmp_table 
+AS
+SELECT * 
+FROM CarrierGroup;
+
+COPY tmp_table
+FROM 'C:\DatabaseHW\CarrierGroup.csv' DELIMITER ',' CSV HEADER;
+
+INSERT INTO CarrierGroup
 SELECT *
 FROM tmp_table
 ON CONFLICT DO NOTHING;

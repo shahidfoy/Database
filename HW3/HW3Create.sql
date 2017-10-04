@@ -1,34 +1,24 @@
-/*
-Mohammad Shahid Foy
-Homework3
-CS 3810
-Mrs. Cohen
-*/
 /* T - 100 Segment US Carrier */
-CREATE TABLE Destination (
-	destination_airport_id INT NOT NULL,
-	destination_airport_sequence INT NOT NULL,
-	destination_market_id INT NOT NULL,
-	destination VARCHAR(3) NOT NULL,
-	destination_city VARCHAR(32) NOT NULL,
-	destination_state VARCHAR(2) NOT NULL,
-	destination_state_fips INT NOT NULL,
-	destination_state_name VARCHAR(32) NOT NULL,
-	destination_wac INT NOT NULL,
-	PRIMARY KEY (destination_airport_id)
+CREATE TABLE Airport (
+	airport_id INT NOT NULL,
+	airport_sequence INT NOT NULL,
+	market_id INT NOT NULL,
+	city VARCHAR(32) NOT NULL,
+	state VARCHAR(2) NOT NULL,
+	PRIMARY KEY (airport_id)
 );
 
-CREATE TABLE Origin (
-	origin_airport_id INT NOT NULL,
-	origin_airport_sequence INT NOT NULL,
-	origin_market_id INT NOT NULL,
+CREATE TABLE TravelInfo (
+	destination VARCHAR(3) NOT NULL,
 	origin VARCHAR(3) NOT NULL,
-	origin_city VARCHAR(32) NOT NULL,
-	origin_state VARCHAR(2) NOT NULL,
-	origin_state_fips INT NOT NULL,
-	origin_state_name VARCHAR(32) NOT NULL,
-	origin_wac INT NOT NULL,
-	PRIMARY KEY (origin_airport_id)
+	PRIMARY KEY(destination, origin)
+);
+
+CREATE TABLE StateInfo (
+	state_fips INT NOT NULL,
+	state_name VARCHAR(32) NOT NULL,
+	wac INT NOT NULL,
+	PRIMARY KEY(wac)
 );
 
 CREATE TABLE Carrier (
@@ -36,12 +26,16 @@ CREATE TABLE Carrier (
 	airline_id INT NOT NULL,
 	unique_carrier_name VARCHAR(64) NOT NULL,
 	carrier_entity VARCHAR(10),
-	region VARCHAR(1),
+	region VARCHAR(1),	
+	PRIMARY KEY (airline_id)
+);
+
+CREATE TABLE CarrierGroup (
 	carrier VARCHAR(10),
 	carrier_name VARCHAR(64),
 	carrier_group INT,
 	carrier_group_new INT,
-	PRIMARY KEY (airline_id)
+	PRIMARY KEY (carrier_name)
 );
 
 CREATE TABLE CarrierInfo (
@@ -84,9 +78,9 @@ CREATE TABLE DateInfo (
 
 CREATE TABLE Flights (
 	flight_id INT PRIMARY KEY NOT NULL,
-	destination_airport_id INT references Destination(destination_airport_id),
-	origin_airport_id INT references Origin(origin_airport_id),
+	airport_id INT references Airport(airport_id),
 	airline_id INT references Carrier(airline_id),
+	carrier_name VARCHAR(64) references CarrierGroup(carrier_name),
 	carrier_id INT references CarrierInfo(carrier_id),
 	aircraft_type INT references AircraftInfo(aircraft_type),
 	departures_scheduled INT NOT NULL,
@@ -96,9 +90,13 @@ CREATE TABLE Flights (
 	year INT NOT NULL,
 	quarter INT NOT NULL,
 	month INT NOT NULL,
+	destination VARCHAR(3) NOT NULL,
+	origin VARCHAR(3) NOT NULL,
+	wac INT references StateInfo(wac),
 	FOREIGN KEY (departures_scheduled, departures_performed) REFERENCES Departures(departures_scheduled, departures_performed),
 	FOREIGN KEY (distance_group, class) REFERENCES Class(distance_group, class),
-	FOREIGN KEY (year, quarter, month) REFERENCES DateInfo(year, quarter, month)
+	FOREIGN KEY (year, quarter, month) REFERENCES DateInfo(year, quarter, month),
+	FOREIGN KEY (destination, origin) REFERENCES TravelInfo(destination, origin)
 );
 
 /* Carrier Decode */
@@ -138,3 +136,52 @@ CREATE TABLE CarrierDecode (
 	date_source_id INT references DateSource(date_source_id),
 	FOREIGN KEY (wac, carrier_group, carrier_group_new, region) REFERENCES DecodeInfo (wac, carrier_group, carrier_group_new, region)
 );
+
+
+/*
+CREATE TABLE Destination (
+	destination_airport_id INT NOT NULL,
+	destination_airport_sequence INT NOT NULL,
+	destination_market_id INT NOT NULL,
+	destination VARCHAR(3) NOT NULL,
+	destination_city VARCHAR(32) NOT NULL,
+	destination_state VARCHAR(2) NOT NULL,
+	destination_state_fips INT NOT NULL,
+	destination_state_name VARCHAR(32) NOT NULL,
+	destination_wac INT NOT NULL,
+	PRIMARY KEY (destination_airport_id)
+);
+
+CREATE TABLE Origin (
+	origin_airport_id INT NOT NULL,
+	origin_airport_sequence INT NOT NULL,
+	origin_market_id INT NOT NULL,
+	origin VARCHAR(3) NOT NULL,
+	origin_city VARCHAR(32) NOT NULL,
+	origin_state VARCHAR(2) NOT NULL,
+	origin_state_fips INT NOT NULL,
+	origin_state_name VARCHAR(32) NOT NULL,
+	origin_wac INT NOT NULL,
+	PRIMARY KEY (origin_airport_id)
+);
+
+CREATE TABLE Flights (
+	flight_id INT PRIMARY KEY NOT NULL,
+	destination_airport_id INT references Destination(destination_airport_id),
+	origin_airport_id INT references Origin(origin_airport_id),
+	airline_id INT references Carrier(airline_id),
+	carrier_id INT references CarrierInfo(carrier_id),
+	aircraft_type INT references AircraftInfo(aircraft_type),
+	departures_scheduled INT NOT NULL,
+	departures_performed INT NOT NULL,
+	distance_group INT NOT NULL,
+	class VARCHAR(1) NOT NULL,
+	year INT NOT NULL,
+	quarter INT NOT NULL,
+	month INT NOT NULL,
+	FOREIGN KEY (departures_scheduled, departures_performed) REFERENCES Departures(departures_scheduled, departures_performed),
+	FOREIGN KEY (distance_group, class) REFERENCES Class(distance_group, class),
+	FOREIGN KEY (year, quarter, month) REFERENCES DateInfo(year, quarter, month)
+);
+
+*/
