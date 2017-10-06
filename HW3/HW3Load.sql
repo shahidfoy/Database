@@ -1,4 +1,4 @@
-/* T - 100 Segment US Carrier */
+/* T - 100 Segment US Carrier  will need to update this soon */
 /* Airport Destination */
 CREATE TEMP TABLE tmp_table 
 AS
@@ -6,7 +6,7 @@ SELECT *
 FROM Airport;
 
 COPY tmp_table
-FROM 'C:\DatabaseHW\Destination.csv' DELIMITER ',' CSV HEADER;
+FROM 'C:\DatabaseHW\Destination_Airport.csv' DELIMITER ',' CSV HEADER;
 
 INSERT INTO Airport
 SELECT *
@@ -22,7 +22,7 @@ SELECT *
 FROM Airport;
 
 COPY tmp_table
-FROM 'C:\DatabaseHW\Origin.csv' DELIMITER ',' CSV HEADER;
+FROM 'C:\DatabaseHW\Origin_Airport.csv' DELIMITER ',' CSV HEADER;
 
 INSERT INTO Airport
 SELECT *
@@ -31,14 +31,30 @@ ON CONFLICT DO NOTHING;
 
 DROP TABLE tmp_table;
 
-/* StateInfo */
+/* Destination StateInfo */
 CREATE TEMP TABLE tmp_table 
 AS
 SELECT * 
 FROM StateInfo;
 
 COPY tmp_table
-FROM 'C:\DatabaseHW\StateInfo.csv' DELIMITER ',' CSV HEADER;
+FROM 'C:\DatabaseHW\Destination_StateInfo.csv' DELIMITER ',' CSV HEADER;
+
+INSERT INTO StateInfo
+SELECT *
+FROM tmp_table
+ON CONFLICT DO NOTHING;
+
+DROP TABLE tmp_table;
+
+/* Origin StateInfo */
+CREATE TEMP TABLE tmp_table 
+AS
+SELECT * 
+FROM StateInfo;
+
+COPY tmp_table
+FROM 'C:\DatabaseHW\Origin_StateInfo.csv' DELIMITER ',' CSV HEADER;
 
 INSERT INTO StateInfo
 SELECT *
@@ -102,7 +118,7 @@ SELECT *
 FROM CarrierInfo;
 
 COPY tmp_table
-FROM 'C:\DatabaseHW\Carrier_info.csv' DELIMITER ',' CSV HEADER;
+FROM 'C:\DatabaseHW\CarrierInfo.csv' DELIMITER ',' CSV HEADER;
 
 INSERT INTO CarrierInfo
 SELECT *
@@ -118,7 +134,7 @@ SELECT *
 FROM AircraftInfo;
 
 COPY tmp_table
-FROM 'C:\DatabaseHW\Aircraft_info.csv' DELIMITER ',' CSV HEADER;
+FROM 'C:\DatabaseHW\AircraftInfo.csv' DELIMITER ',' CSV HEADER;
 
 INSERT INTO AircraftInfo
 SELECT *
@@ -166,7 +182,7 @@ SELECT *
 FROM DateInfo;
 
 COPY tmp_table
-FROM 'C:\DatabaseHW\Date_info.csv' DELIMITER ',' CSV HEADER;
+FROM 'C:\DatabaseHW\DateInfo.csv' DELIMITER ',' CSV HEADER;
 
 INSERT INTO DateInfo
 SELECT *
