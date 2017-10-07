@@ -212,16 +212,16 @@ ON CONFLICT DO NOTHING;
 
 DROP TABLE tmp_table;
 
-/* DecodeInfo */
+/* AirlineCarrierGroup */
 CREATE TEMP TABLE tmp_table 
 AS
 SELECT * 
-FROM DecodeInfo;
+FROM AirlineCarrierGroup ;
 
 COPY tmp_table
-FROM 'C:\DatabaseHW\Decode_info.csv' DELIMITER ',' CSV HEADER;
+FROM 'C:\DatabaseHW\AirlineCarrierGroup.csv' DELIMITER ',' CSV HEADER;
 
-INSERT INTO DecodeInfo
+INSERT INTO AirlineCarrierGroup 
 SELECT *
 FROM tmp_table
 ON CONFLICT DO NOTHING;
@@ -235,9 +235,25 @@ SELECT *
 FROM DateSource;
 
 COPY tmp_table
-FROM 'C:\DatabaseHW\Date_source.csv' DELIMITER ',' CSV HEADER;
+FROM 'C:\DatabaseHW\DateSource.csv' DELIMITER ',' CSV HEADER;
 
 INSERT INTO DateSource
+SELECT *
+FROM tmp_table
+ON CONFLICT DO NOTHING;
+
+DROP TABLE tmp_table;
+
+/* WAC */
+CREATE TEMP TABLE tmp_table 
+AS
+SELECT * 
+FROM WAC;
+
+COPY tmp_table
+FROM 'C:\DatabaseHW\WAC.csv' DELIMITER ',' CSV HEADER;
+
+INSERT INTO WAC
 SELECT *
 FROM tmp_table
 ON CONFLICT DO NOTHING;
