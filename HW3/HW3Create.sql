@@ -21,7 +21,7 @@ CREATE TABLE StateInfo (
 	state_fips INT NOT NULL,
 	state_name VARCHAR(32) NOT NULL,
 	wac INT NOT NULL,
-	PRIMARY KEY(wac)
+	PRIMARY KEY(wac, airport_id)
 );
 
 CREATE TABLE Carrier (
