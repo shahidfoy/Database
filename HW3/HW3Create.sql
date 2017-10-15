@@ -11,8 +11,10 @@ CREATE TABLE Airport (
 CREATE TABLE TravelInfo (
 	destination_airport_id INT NOT NULL references Airport(airport_id),
 	destination VARCHAR(3) NOT NULL,
+	destination_city VARCHAR(32) NOT NULL,
 	origin_airport_id INT NOT NULL references Airport(airport_id),
 	origin VARCHAR(3) NOT NULL,
+	origin_city VARCHAR(32) NOT NULL,
 	PRIMARY KEY(destination_airport_id, destination, origin_airport_id, origin)
 );
 
