@@ -1,4 +1,9 @@
 /*
+Mohammad Shahid Foy
+Homework 4
+CS 3810
+Mrs. Cohen
+
 B) Write a PL/pgSQL stored procedure that analyzes the various flights of the airlines. The report should display:
 Airline name, total number of flights, average distance, ratio of passengers to distance, ratio of freight to
 distance, correlation coefficient for passengers to freight, correlation coefficient for passengers to distance.
