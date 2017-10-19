@@ -1,4 +1,9 @@
 /*
+Mohammad Shahid Foy
+Homework4
+CS 3810
+Mrs. Cohen
+
 A) Write 4 SQL queries. The advantage to this assignment is that by sort, slice & dice of the original spreadsheet,
 you should be able to get the answers and verify against your queries.
 
