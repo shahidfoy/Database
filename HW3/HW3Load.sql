@@ -1,3 +1,9 @@
+/*
+Mohammad Shahid Foy
+Homework3
+CS 3810
+Mrs. Cohen
+*/
 /* T - 100 Segment US Carrier  will need to update this soon */
 /* Airport Destination */
 CREATE TEMP TABLE tmp_table 
