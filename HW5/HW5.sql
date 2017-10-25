@@ -25,9 +25,10 @@ CREATE TABLE MailingAddress (
 );
 
 CREATE TABLE Email (
-	email VARCHAR(64) NOT NULL,
+	email_id INT NOT NULL,
+	email VARCHAR(64),
 	customer_id INT NOT NULL references Customer(customer_id),
-	PRIMARY KEY (email)
+	PRIMARY KEY (email_id)
 );
 
 CREATE TABLE Airline (
