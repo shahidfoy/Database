@@ -19,6 +19,7 @@ CREATE TABLE MailingAddress (
 	customer_id INT NOT NULL references Customer(customer_id),
 	street VARCHAR(126) NOT NULL,
 	city VARCHAR(64) NOT NULL,
+	state VARCHAR(64) NOT NULL,
 	postal_code INT NOT NULL,
 	country VARCHAR(64) NOT NULL,
 	PRIMARY KEY (mail_id)
