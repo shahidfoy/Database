@@ -12,3 +12,7 @@ for more documentation checkout:
 https://docs.bitnami.com/installer/infrastructure/wapp/
 
 HW6.error and HW6.flight are located inside the htdocs folder
+
+IN ORDER TO HOOK UP POSTGRESQL DATABASE WITH STACK
+make sure to go into 'htdocs/inc/connection.php' and change the password and port number to match your postgres data
+unlease your port is already set to 5432 and the database username is postgres and the password is postgres
