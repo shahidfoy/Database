@@ -1,12 +1,12 @@
 CREATE TABLE Customer (
-	customer_id INT NOT NULL,
+	customer_id SERIAL NOT NULL,
 	first_name VARCHAR(32) NOT NULL,
 	last_name VARCHAR(32) NOT NULL,
 	PRIMARY KEY (customer_id)
 );
 
 CREATE TABLE PhoneNumber (
-	phone_id INT NOT NULL,
+	phone_id SERIAL NOT NULL,
 	customer_id INT NOT NULL references Customer(customer_id),
 	country_code INT,
 	area_code INT,
@@ -15,7 +15,7 @@ CREATE TABLE PhoneNumber (
 );
 
 CREATE TABLE MailingAddress (
-	mail_id INT NOT NULL,
+	mail_id SERIAL NOT NULL,
 	customer_id INT NOT NULL references Customer(customer_id),
 	street VARCHAR(126) NOT NULL,
 	city VARCHAR(64) NOT NULL,
@@ -26,31 +26,31 @@ CREATE TABLE MailingAddress (
 );
 
 CREATE TABLE Email (
-	email_id INT NOT NULL,
+	email_id SERIAL NOT NULL,
 	email VARCHAR(64),
 	customer_id INT NOT NULL references Customer(customer_id),
 	PRIMARY KEY (email_id)
 );
 
 CREATE TABLE Airline (
-	Airline_code INT NOT NULL,
+	Airline_code SERIAL NOT NULL,
 	Airline_name VARCHAR(128) NOT NULL,
 	Airline_country VARCHAR(64) NOT NULL,
 	PRIMARY KEY (Airline_code)
 );
 
 CREATE TABLE FlightInfo (
-	unique_flight_number INT NOT NULL,
+	unique_flight_number SERIAL NOT NULL,
 	origin_city VARCHAR(64) NOT NULL,
 	destination_city VARCHAR(64) NOT NULL,
-	length_of_flight BIGINT NOT NULL,
+	length_of_flight TIME NOT NULL,
 	Airline_code INT NOT NULL references Airline(Airline_code),
 	PRIMARY KEY (unique_flight_number)
 );
 
 CREATE TABLE Booking (
-	unique_booking_number INT NOT NULL,
-	city_code INT NOT NULL,
+	unique_booking_number SERIAL NOT NULL,
+	city_code VARCHAR(64) NOT NULL,
 	booking_date DATE NOT NULL,
 	flight_number INT NOT NULL references FlightInfo(unique_flight_number),
 	departure_time TIME,
