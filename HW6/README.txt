@@ -1,4 +1,10 @@
+View Homework 6:
+=========================
+An example of the work can be seen at this web address:
+http://104.154.58.248
+
 Getting started:
+=========================
 This database project was made using the Wapp stack.
 if you would like to run this project on your local computer download the wapp stack here:
 https://bitnami.com/stack/wapp
@@ -20,5 +26,3 @@ IN ORDER TO HOOK UP POSTGRESQL DATABASE WITH STACK
 make sure to go into 'htdocs/inc/connection.php' and change the password and port number to match your postgres data
 unlease your port is already set to 5432 and the database username is postgres and the password is postgres
 
-An example of the work can be seen at this web address:
-http://104.154.58.248
