@@ -6,7 +6,7 @@ http://104.154.58.248
 Getting started:
 =========================
 This database project was made using the Wapp stack.
-if you would like to run this project on your local computer download the wapp stack here:
+if you would like to run this project on your local Windows computer download the wapp stack here:
 https://bitnami.com/stack/wapp
 
 If you are using linux you can use:
