@@ -12,6 +12,9 @@ https://bitnami.com/stack/wapp
 If you are using linux you can use:
 https://bitnami.com/stack/lapp
 
+If you are using Mac you can use:
+https://bitnami.com/stack/mapp
+
 this stack will set up a web development environment where you can use PHP and postgreSQL.
 once the stack is downloaded go to its location and move the htdocs files provided in this folder into the location where you 
 downloaded the wapp stack.  Replace the htdocs file inside the 'apache2/htdocs' with the 'htdocs' provided in this project
