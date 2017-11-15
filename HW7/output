@@ -1,0 +1,4 @@
+C:\Users\shahi>mongoimport --db test --collection flights --jsonArray --drop --file C:\Users\shahi\Documents\msudenver\Database\Homework7\HW7test.json
+2017-11-15T01:14:04.349-0700    connected to: localhost
+2017-11-15T01:14:04.349-0700    dropping: test.flights
+2017-11-15T01:14:04.660-0700    imported 23 documents
