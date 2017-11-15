@@ -1,0 +1,53 @@
+
+                             json_agg                             
+------------------------------------------------------------------
+ [{"customer_id":1,"first_name":"Frodo","last_name":"Baggins"}, 
+  {"customer_id":2,"first_name":"Samwise","last_name":"Gamgee"},
+  {"customer_id":3,"first_name":"Gandalf","last_name":"Grey"},  
+  {"customer_id":4,"first_name":"Peregrin","last_name":"Took"}]
+(1 row)
+
+                                         json_agg                                          
+-------------------------------------------------------------------------------------------
+ [{"phone_id":1,"customer_id":1,"country_code":1,"area_code":234,"local_number":5678910},
+  {"phone_id":2,"customer_id":2,"country_code":2,"area_code":333,"local_number":4444444},
+  {"phone_id":3,"customer_id":3,"country_code":3,"area_code":333,"local_number":3333333},
+  {"phone_id":4,"customer_id":4,"country_code":3,"area_code":333,"local_number":2345678}]
+(1 row)
+
+                                                                 json_agg                                                                  
+-------------------------------------------------------------------------------------------------------------------------------------------
+ [{"mail_id":1,"customer_id":1,"street":"12 Shire Way","city":"Hobbit","state":"Town","postal_code":87234,"country":"Middle Earth"},     
+  {"mail_id":2,"customer_id":2,"street":"22 Shire Way","city":"Hobbit","state":"Town","postal_code":87934,"country":"Middle Earth"},     
+  {"mail_id":3,"customer_id":3,"street":"45 White Tower Rd","city":"Wizard","state":"Town","postal_code":67932,"country":"Middle Earth"},
+  {"mail_id":4,"customer_id":4,"street":"456 meme st","city":"Hobbit","state":"Town","postal_code":89023,"country":"Middle Earth"}]
+(1 row)
+
+ json_agg 
+----------
+ 
+(1 row)
+
+                               json_agg                                
+-----------------------------------------------------------------------
+ [{"airline_code":1,"airline_name":"UNITED","airline_country":"USA"},
+  {"airline_code":2,"airline_name":"BRITISH","airline_country":"UK"},
+  {"airline_code":3,"airline_name":"AIRCAN","airline_country":"CAN"}]
+(1 row)
+
+                                                              json_agg                                                               
+-------------------------------------------------------------------------------------------------------------------------------------
+ [{"unique_flight_number":1,"origin_city":"New York","destination_city":"London","length_of_flight":"12:00:00","airline_code":1},  
+  {"unique_flight_number":2,"origin_city":"Toronto","destination_city":"Edinburgh","length_of_flight":"12:00:00","airline_code":3},
+  {"unique_flight_number":3,"origin_city":"Paris","destination_city":"Nice","length_of_flight":"12:00:00","airline_code":2},       
+  {"unique_flight_number":4,"origin_city":"Toronto","destination_city":"London","length_of_flight":"12:00:00","airline_code":3}]
+(1 row)
+
+                                                                                                                                               json_agg                                                                                                                                                
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ [{"unique_booking_number":1,"city_code":"New York","booking_date":"2017-11-14","flight_number":1,"departure_time":"10:00:00","departure_date":"2017-11-21","arrival_time":"17:00:00","arrival_date":"2017-11-24","customer_id":1,"paying_customer_fname":"Frodo","paying_customer_lname":"Baggins"},
+  {"unique_booking_number":2,"city_code":"Toronto","booking_date":"2017-11-14","flight_number":2,"departure_time":"10:00:00","departure_date":"2017-11-21","arrival_time":"17:00:00","arrival_date":"2017-11-24","customer_id":2,"paying_customer_fname":"Samwise","paying_customer_lname":"Gamgee"},
+  {"unique_booking_number":3,"city_code":"Paris","booking_date":"2017-11-14","flight_number":3,"departure_time":"10:00:00","departure_date":"2017-11-21","arrival_time":"17:00:00","arrival_date":"2017-11-24","customer_id":3,"paying_customer_fname":"Gandalf","paying_customer_lname":"Grey"},    
+  {"unique_booking_number":4,"city_code":"Toronto","booking_date":"2017-11-14","flight_number":4,"departure_time":"10:00:00","departure_date":"2017-11-21","arrival_time":"17:00:00","arrival_date":"2017-11-24","customer_id":4,"paying_customer_fname":"Peregrin","paying_customer_lname":"Took"}]
+(1 row)
+
