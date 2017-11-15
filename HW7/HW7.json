@@ -23,11 +23,6 @@
   {"mail_id":4,"customer_id":4,"street":"456 meme st","city":"Hobbit","state":"Town","postal_code":89023,"country":"Middle Earth"}]
 (1 row)
 
- json_agg 
-----------
- 
-(1 row)
-
                                json_agg                                
 -----------------------------------------------------------------------
  [{"airline_code":1,"airline_name":"UNITED","airline_country":"USA"},
