@@ -1,0 +1,202 @@
+{
+	"_id" : ObjectId("5a0bebb700d9869010a80a26"),
+	"customer_id" : 1,
+	"first_name" : "Frodo",
+	"last_name" : "Baggins"
+}
+{
+	"_id" : ObjectId("5a0bebb700d9869010a80a27"),
+	"customer_id" : 2,
+	"first_name" : "Samwise",
+	"last_name" : "Gamgee"
+}
+{
+	"_id" : ObjectId("5a0bebb700d9869010a80a28"),
+	"customer_id" : 3,
+	"first_name" : "Gandalf",
+	"last_name" : "Grey"
+}
+{
+	"_id" : ObjectId("5a0bebb700d9869010a80a29"),
+	"customer_id" : 4,
+	"first_name" : "Peregrin",
+	"last_name" : "Took"
+}
+{
+	"_id" : ObjectId("5a0bebe200d9869010a80a2a"),
+	"phone_id" : 1,
+	"customer_id" : 1,
+	"country_code" : 1,
+	"area_code" : 234,
+	"local_number" : 5678910
+}
+{
+	"_id" : ObjectId("5a0bebe200d9869010a80a2b"),
+	"phone_id" : 2,
+	"customer_id" : 2,
+	"country_code" : 2,
+	"area_code" : 333,
+	"local_number" : 4444444
+}
+{
+	"_id" : ObjectId("5a0bebe200d9869010a80a2c"),
+	"phone_id" : 3,
+	"customer_id" : 3,
+	"country_code" : 3,
+	"area_code" : 333,
+	"local_number" : 3333333
+}
+{
+	"_id" : ObjectId("5a0bebe200d9869010a80a2d"),
+	"phone_id" : 4,
+	"customer_id" : 4,
+	"country_code" : 3,
+	"area_code" : 333,
+	"local_number" : 2345678
+}
+{
+	"_id" : ObjectId("5a0becd200d9869010a80a2e"),
+	"mail_id" : 1,
+	"customer_id" : 1,
+	"street" : "12 Shire Way",
+	"city" : "Hobbit",
+	"state" : "Town",
+	"postal_code" : 87234,
+	"country" : "Middle Earth"
+}
+{
+	"_id" : ObjectId("5a0becd200d9869010a80a2f"),
+	"mail_id" : 2,
+	"customer_id" : 2,
+	"street" : "22 Shire Way",
+	"city" : "Hobbit",
+	"state" : "Town",
+	"postal_code" : 87934,
+	"country" : "Middle Earth"
+}
+{
+	"_id" : ObjectId("5a0becd200d9869010a80a30"),
+	"mail_id" : 3,
+	"customer_id" : 3,
+	"street" : "45 White Tower Rd",
+	"city" : "Wizard",
+	"state" : "Town",
+	"postal_code" : 67932,
+	"country" : "Middle Earth"
+}
+{
+	"_id" : ObjectId("5a0becd200d9869010a80a31"),
+	"mail_id" : 4,
+	"customer_id" : 4,
+	"street" : "456 meme st",
+	"city" : "Hobbit",
+	"state" : "Town",
+	"postal_code" : 89023,
+	"country" : "Middle Earth"
+}
+{
+	"_id" : ObjectId("5a0bed3e00d9869010a80a32"),
+	"airline_code" : 1,
+	"airline_name" : "UNITED",
+	"airline_country" : "USA"
+}
+{
+	"_id" : ObjectId("5a0bed3e00d9869010a80a33"),
+	"airline_code" : 2,
+	"airline_name" : "BRITISH",
+	"airline_country" : "UK"
+}
+{
+	"_id" : ObjectId("5a0bed3e00d9869010a80a34"),
+	"airline_code" : 3,
+	"airline_name" : "AIRCAN",
+	"airline_country" : "CAN"
+}
+{
+	"_id" : ObjectId("5a0bed5800d9869010a80a35"),
+	"unique_flight_number" : 1,
+	"origin_city" : "New York",
+	"destination_city" : "London",
+	"length_of_flight" : "12:00:00",
+	"airline_code" : 1
+}
+{
+	"_id" : ObjectId("5a0bed5800d9869010a80a36"),
+	"unique_flight_number" : 2,
+	"origin_city" : "Toronto",
+	"destination_city" : "Edinburgh",
+	"length_of_flight" : "12:00:00",
+	"airline_code" : 3
+}
+{
+	"_id" : ObjectId("5a0bed5800d9869010a80a37"),
+	"unique_flight_number" : 3,
+	"origin_city" : "Paris",
+	"destination_city" : "Nice",
+	"length_of_flight" : "12:00:00",
+	"airline_code" : 2
+}
+{
+	"_id" : ObjectId("5a0bed5800d9869010a80a38"),
+	"unique_flight_number" : 4,
+	"origin_city" : "Toronto",
+	"destination_city" : "London",
+	"length_of_flight" : "12:00:00",
+	"airline_code" : 3
+}
+{
+	"_id" : ObjectId("5a0bed6c00d9869010a80a39"),
+	"unique_booking_number" : 1,
+	"city_code" : "New York",
+	"booking_date" : "2017-11-14",
+	"flight_number" : 1,
+	"departure_time" : "10:00:00",
+	"departure_date" : "2017-11-21",
+	"arrival_time" : "17:00:00",
+	"arrival_date" : "2017-11-24",
+	"customer_id" : 1,
+	"paying_customer_fname" : "Frodo",
+	"paying_customer_lname" : "Baggins"
+}
+{
+	"_id" : ObjectId("5a0bed6c00d9869010a80a3a"),
+	"unique_booking_number" : 2,
+	"city_code" : "Toronto",
+	"booking_date" : "2017-11-14",
+	"flight_number" : 2,
+	"departure_time" : "10:00:00",
+	"departure_date" : "2017-11-21",
+	"arrival_time" : "17:00:00",
+	"arrival_date" : "2017-11-24",
+	"customer_id" : 2,
+	"paying_customer_fname" : "Samwise",
+	"paying_customer_lname" : "Gamgee"
+}
+{
+	"_id" : ObjectId("5a0bed6c00d9869010a80a3b"),
+	"unique_booking_number" : 3,
+	"city_code" : "Paris",
+	"booking_date" : "2017-11-14",
+	"flight_number" : 3,
+	"departure_time" : "10:00:00",
+	"departure_date" : "2017-11-21",
+	"arrival_time" : "17:00:00",
+	"arrival_date" : "2017-11-24",
+	"customer_id" : 3,
+	"paying_customer_fname" : "Gandalf",
+	"paying_customer_lname" : "Grey"
+}
+{
+	"_id" : ObjectId("5a0bed6c00d9869010a80a3c"),
+	"unique_booking_number" : 4,
+	"city_code" : "Toronto",
+	"booking_date" : "2017-11-14",
+	"flight_number" : 4,
+	"departure_time" : "10:00:00",
+	"departure_date" : "2017-11-21",
+	"arrival_time" : "17:00:00",
+	"arrival_date" : "2017-11-24",
+	"customer_id" : 4,
+	"paying_customer_fname" : "Peregrin",
+	"paying_customer_lname" : "Took"
+}
