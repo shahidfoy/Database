@@ -20,6 +20,8 @@ once the stack is downloaded go to its location and move the htdocs files provid
 downloaded the wapp stack.  Replace the htdocs file inside the 'apache2/htdocs' with the 'htdocs' provided in this project
 also make sure to use the tables created in HW5 to setup the database.
 
+Once you create the tables make sure to load HW6Load.sql into the database for the airline information
+
 for more documentation checkout:
 https://docs.bitnami.com/installer/infrastructure/wapp/
 
