@@ -9,12 +9,13 @@ include("sql_queries/bookingqueries.php");
 		$url = "flyAirCan.php?cust=".$customer_id."&city=".$city."";
 	} else {
 		header("Location: index.php");
+		exit();
 	}
 
 	if(isset($_POST['submit']) && isset($_POST['City'])) {
 		$errorMsg .= $_POST['City'];
 		$destcity = $_POST['City'];
-		$airline = "BRITISH";
+		$airline = "AIRCAN";
 
 
 		$length_of_flight = "12:00:00";
@@ -22,6 +23,7 @@ include("sql_queries/bookingqueries.php");
 		$booking_num = insertBooking($city, $flight_num, $customer_id);
 
 		header("Location: confirmation.php?cust=$customer_id&flightnum=$flight_num&bookingnum=$booking_num&airline=$airline");
+		exit();
 		
 	}
 ?>

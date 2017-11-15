@@ -11,6 +11,7 @@ include("sql_queries/reservationqueries.php");
 		$airline = $_GET['airline'];
 	} else {
 		header("Location: index.php");
+		exit();
 	}
 
 	$customer = displayCustomer($customer_id);

@@ -6,6 +6,7 @@
 		$url = "selectFlight.php?cust=".$customer_id."";
 	} else {
 		header("Location: index.php");
+		exit();
 	}
 
 	if(isset($_POST['submit']) && isset($_POST['City'])) {
@@ -14,10 +15,13 @@
 
 		if($city == "New York" || $city == "Chicago") {
 			header("Location: flyUnited.php?cust=$customer_id&city=$city");
+			exit();
 		} else if($city == "London" || $city == "Edinburgh" || $city == "Paris" || $city == "Nice") {
 			header("Location: flyBritish.php?cust=$customer_id&city=$city");
-		} else {
+			exit();
+		} else if($city == "Toronto" || $city == "Montreal") {
 			header("Location: flyAirCan.php?cust=$customer_id&city=$city");
+			exit();
 		}
 	}
 

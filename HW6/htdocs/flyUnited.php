@@ -9,12 +9,13 @@ include("sql_queries/bookingqueries.php");
 		$url = "flyUnited.php?cust=".$customer_id."&city=".$city."";
 	} else {
 		header("Location: index.php");
+		exit();
 	}
 
 	if(isset($_POST['submit']) && isset($_POST['City'])) {
 		$errorMsg .= $_POST['City'];
 		$destcity = $_POST['City'];
-		$airline = "BRITISH";
+		$airline = "UNITED";
 
 
 		$length_of_flight = "12:00:00";
@@ -22,6 +23,7 @@ include("sql_queries/bookingqueries.php");
 		$booking_num = insertBooking($city, $flight_num, $customer_id);
 
 		header("Location: confirmation.php?cust=$customer_id&flightnum=$flight_num&bookingnum=$booking_num&airline=$airline");
+		exit();
 		
 	}
 ?>
@@ -58,11 +60,7 @@ include("sql_queries/bookingqueries.php");
 								<option value="New York" selected>New York</option>
 								<option value="Chicago">Chicago</option>
 								<option value="London">London</option>
-								<option value="Edinburgh">Edinburgh</option>
-								<option value="Paris">Paris</option>
-								<option value="Nice">Nice</option>
 								<option value="Toronto">Toronto</option>
-								<option value="Montreal">Montreal</option>
 							</select>
 							<br><br>
 							<button type="submit" name="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
