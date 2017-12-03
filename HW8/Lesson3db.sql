@@ -48,3 +48,7 @@ WITH (FORMAT csv, HEADER True, QUOTE '"');
 
 /* 7. Determine a way to associate the geometries in the postal codes table 
 with the records in the roster table. */
+
+/* 8. Use QGIS to create a map of the hometowns. Include state and county boundaries for some context. */
+
+
