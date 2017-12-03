@@ -1,6 +1,14 @@
 /* gets access to spatial_ref_sys in the public Schemas */
 SET search_path TO usa, public;
 
+/* 1. Import the counties shapefile into Postgres. */
+/* 
+  Answer: On windows you can import shapefiles into postgres by going into 
+   \9.6\bin\postgisgui 
+  and activate shp2pgsql-gui
+  from there you can connect to postgres and upload the countries.shp file.
+*/
+
 /* 2. Create a table to store the postal code centroids. */
 CREATE TABLE postalcode (
 	code VARCHAR PRIMARY KEY,
