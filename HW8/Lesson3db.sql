@@ -1,3 +1,11 @@
+/*
+Mohammad Shahid Foy
+Homework 8
+CS 3810
+Mrs. Cohen
+*/
+
+
 /* gets access to spatial_ref_sys in the public Schemas */
 SET search_path TO usa, public;
 
