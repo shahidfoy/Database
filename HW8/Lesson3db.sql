@@ -29,8 +29,7 @@ COPY usa.postalcode FROM 'C:\DatabaseHW\Lesson3db\postal_codes.txt'
 WITH (FORMAT csv, HEADER True, QUOTE '"');
 
 /* 4. Add a geometry column and use an UPDATE query to populate it with POINT geometries. */
-ALTER TABLE postalcode
-ADD COLUMN geometry VARCHAR;
+SELECT AddGeometryColumn('usa','postalcode','geometry',4269,'POINT',2);
 
 UPDATE postalcode
 SET geometry = ST_GeomFromText('POINT(' || long || ' ' || lat || ')', 4269)
