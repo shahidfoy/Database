@@ -1,3 +1,6 @@
+/* gets access to spatial_ref_sys in the public Schemas */
+SET search_path TO usa, public;
+
 /* 2. Create a table to store the postal code centroids. */
 CREATE TABLE postalcode (
 	code VARCHAR PRIMARY KEY,
