@@ -1,7 +1,6 @@
 View Homework 6:
 =========================
-An example of the work can be seen at this web address:
-http://104.154.58.248
+
 
 Getting started:
 =========================
